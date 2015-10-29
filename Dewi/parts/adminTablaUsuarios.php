@@ -49,19 +49,43 @@
                                             <td>$usuario->domicilio</td>
                                             <td>$usuario->telefono</td>
                                             <td>$usuario->sexo</td>
+                                            <td><button type='button' class='btn btn-danger btn-lg' data-toggle='modal' data-target='#modalEliminar'><i class='fa fa-pencil'></i> Eliminar</button></td>
                                             <td><button class='btn btn-primary' onclick='EditarUsuario($usuario->idUsuario)'><i class='fa fa-edit '></i> Editar</button></td>
-                                            <td><button class='btn btn-danger' onclick='BorrarUsuario($usuario->idUsuario)'><i class='fa fa-pencil'></i> Borrar</button></td>
+                                            <!--<td><button class='btn btn-danger' onclick='BorrarUsuario($usuario->idUsuario)'><i class='fa fa-pencil'></i> Borrar</button></td>-->
                                         </tr>
                                        
                                         
                                     </tbody>";}
                                 echo"</table>
+                                <div class='modal fade' id='modalEliminar' role='dialog'>
+                                    <div class='modal-dialog'>
+                                <!-- Modal content-->
+                                        <div class='modal-content'>
+                                            <div class='modal-header'>
+                                            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                            <h4 class='modal-title'>Confirmar</h4>
+                                            </div>
+                                        <div class='modal-body'>
+                                            <p>¿Seguro quiere eliminar el usuario? Una vez eliminado no podrá recuperarlo.</p>
+                                        </div>
+                                        <div class='modal-footer'>
+                                        <button class='btn btn-danger' onclick='BorrarUsuario($usuario->idUsuario)'><i class='fa fa-pencil'></i> Borrar</button>
+                                            <button type='button' class='btn btn-danger' data-dismiss='modal'>Cancelar</button>
+                                            
+                                        </div>
+                                    </div>
+                                  
+                                    </div> 
+                                </div> 
                             </div>
                             
                         </div>
                     </div>
                     <!--End Advanced Tables -->";
-    ?>            
+    ?>
+    
+    
+                 
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
     <script src="js/jquery-1.10.2.js"></script>

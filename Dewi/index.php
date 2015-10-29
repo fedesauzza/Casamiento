@@ -14,8 +14,10 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/menu.css" rel="stylesheet">
 
-	<!--  <link href="css/bootstrap.css" rel="stylesheet" />	-->	
+
+	 <link href="css/bootstrap.css" rel="stylesheet" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- BOOTSTRAP STYLES-->
@@ -54,7 +56,7 @@
 			</div>
 		</nav>
 		
-		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+		<!--<nav class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="navigation">
 				<div class="container">					
 					<div class="navbar-header">
@@ -65,7 +67,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand">
-							<a href="index.html"><h1><span>C</span>asa-<span>S</span>auzza</h1></a>
+							<a href="index.html"><h1><span>C</span>asamientos <span>S</span>auzza</h1></a>
 						</div>
 					</div>
 					
@@ -82,7 +84,32 @@
 					</div>						
 				</div>
 			</div>	
-		</nav>		
+		</nav>-->
+		<div id="custom-bootstrap-menu" class="navbar navbar-default navbar-static-top" role="navigation">
+		    <!--<div class="container-fluid">-->
+		    <div class="navigation">
+		        <div class="navbar-header"><a class="navbar-brand" href="#"></a>
+		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+		            </button>
+		        </div>
+		        <div class="collapse navbar-collapse navbar-menubuilder">
+		            <ul class="nav navbar-nav navbar-right">
+		                <li><a onclick="Mostrar('Home')">Home</a>
+		                </li>
+		                <li><a onclick="Mostrar('CrearCasamiento')">Planear Casamiento</a>
+		                </li>
+		                <li><a onclick="MostrarLogin()">Conectarse</a>
+		                </li>
+		                <li><a href="Desconectarse">Desconectarse</a>
+		                </li>
+		                <li><a onclick="Mostrar('Contacto')">Contacto</a>
+		                </li>
+		                <li><a onclick="Mostrar('adminPanel')">Admin</a>
+		                </li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>		
 	</header>
    
     <!--<div class="slider">
