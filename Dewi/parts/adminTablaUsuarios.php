@@ -49,7 +49,7 @@
                                             <td>$usuario->domicilio</td>
                                             <td>$usuario->telefono</td>
                                             <td>$usuario->sexo</td>
-                                            <td><button type='button' class='btn btn-danger btn-lg' data-toggle='modal' data-target='#modalEliminar'><i class='fa fa-pencil'></i> Eliminar</button></td>
+                                            <td><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalEliminar'><i class='fa fa-pencil'></i> Eliminar</button></td>
                                             <td><button class='btn btn-primary' onclick='EditarUsuario($usuario->idUsuario)'><i class='fa fa-edit '></i> Editar</button></td>
                                             <!--<td><button class='btn btn-danger' onclick='BorrarUsuario($usuario->idUsuario)'><i class='fa fa-pencil'></i> Borrar</button></td>-->
                                         </tr>
@@ -70,7 +70,7 @@
                                         </div>
                                         <div class='modal-footer'>
                                         <button class='btn btn-danger' onclick='BorrarUsuario($usuario->idUsuario)' data-dismiss='modal'><i class='fa fa-pencil'></i> Borrar</button>
-                                            <button type='button' class='btn btn-danger' data-dismiss='modal'>Cancelar</button>
+                                            <button type='button' class='btn btn-info' data-dismiss='modal'>Cancelar</button>
                                             
                                         </div>
                                     </div>

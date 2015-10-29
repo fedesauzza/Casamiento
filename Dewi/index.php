@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dewi Multi-purpose theme</title>
+    <title>Casamientos Sauzza</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -88,6 +88,7 @@
 		<div id="custom-bootstrap-menu" class="navbar navbar-default navbar-static-top" role="navigation">
 		    <!--<div class="container-fluid">-->
 		    <div class="navigation">
+		    <div class="container">
 		        <div class="navbar-header"><a class="navbar-brand" href="#"></a>
 		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 		            </button>
@@ -108,41 +109,16 @@
 		                </li>
 		            </ul>
 		        </div>
+		        </div>
 		    </div>
 		</div>		
 	</header>
    
-    <!--<div class="slider">
-		<div class="img-responsive">
-			<ul class="bxslider">				
-				<li><img src="img/slider/5.jpg" alt=""/></li>								
-				<li><img src="img/slider/6.jpg" alt=""/></li>	
-				<li><img src="img/slider/7.jpg" alt=""/></li>			
-			</ul>
-		</div>	
-    </div>-->
-	
-    
 	<div class="container">
 		<div class="row" id="principal">
 			<?php include("parts/home.php"); ?>				
+			
 			<!--<div class="col-md-4">
-				<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-					<div class="align-center">
-						<h4>Quick Support</h4>					
-						<div class="icon">
-							<i class="fa fa-heart-o fa-3x"></i>
-						</div>
-						<p>
-						 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
-						</p>
-						<div class="ficon">
-							<a href="#" class="btn btn-default" role="button">Read more</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
 				<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s">
 					<div class="align-center">
 						<h4>Web Design</h4>				

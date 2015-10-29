@@ -87,6 +87,21 @@
 					</div>
 				</div>
 			</div>
-
+			<div class="col-md-12">
+				<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="">
+					<div class="align-center">
+						<h1>Casamientos Sauzza</h1>					
+						<div class="icon">
+							<i class="fa fa-heart-o fa-3x"></i>
+						</div>
+						<p>
+						 Te brindamos ayuda para que organices las mesas de tu casamiento de forma rapida, sencilla y facil. Solo tenes que registrarte y comenzar a planear tu casamiento.
+						</p>
+						<div class="ficon">
+							<a href="#" class="btn btn-default" role="button">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
