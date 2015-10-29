@@ -69,7 +69,7 @@
                                             <p>¿Seguro quiere eliminar el usuario? Una vez eliminado no podrá recuperarlo.</p>
                                         </div>
                                         <div class='modal-footer'>
-                                        <button class='btn btn-danger' onclick='BorrarUsuario($usuario->idUsuario)'><i class='fa fa-pencil'></i> Borrar</button>
+                                        <button class='btn btn-danger' onclick='BorrarUsuario($usuario->idUsuario)' data-dismiss='modal'><i class='fa fa-pencil'></i> Borrar</button>
                                             <button type='button' class='btn btn-danger' data-dismiss='modal'>Cancelar</button>
                                             
                                         </div>
