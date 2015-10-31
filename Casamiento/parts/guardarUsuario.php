@@ -14,47 +14,47 @@
 
 	if(!isset($_FILES["txtFoto"]))
 	{
-		echo "1";
+		//echo "1";
 		// no se cargo una imagen
 	}
 	else
-	{echo "10";
+	{//echo "10";
 		if($_FILES["txtFoto"]['error'])
-		{echo "9";
+		{//echo "9";
 			//error de imagen
 			if ($_POST['imgPerfil'] != "img/find_user.png") {
 				$nombreFoto = substr($_POST['imgPerfil'], 4);
 				$foto = $nombreFoto;
-				echo "ok";
+				//echo "ok";
 			}
 		}
 		else
-		{echo "8";
+		{//echo "8";
 			$tamanio =$_FILES['txtFoto']['size'];
     		if($tamanio>1024000)
     		{
-    			echo "2";
+    	///			echo "2";
     				// "Error: archivo muy grande!"."<br>";
     		}
     		else
-    		{	echo "7";
+    		{//	echo "7";
     			//OBTIENE EL TAMAÑO DE UNA IMAGEN, SI EL ARCHIVO NO ES UNA
 				//IMAGEN, RETORNA FALSE
 				$esImagen = getimagesize($_FILES["txtFoto"]["tmp_name"]);
 				if($esImagen === FALSE) 
 				{
-					echo "3";
+				//	echo "3";
 							//NO ES UNA IMAGEN
 				}
 				else
 				{
-					echo "4";
+				//	echo "4";
 					$NombreCompleto=explode(".", $_FILES['txtFoto']['name']);
 					$Extension=  end($NombreCompleto);
 					$arrayDeExtValida = array("jpg", "jpeg", "gif", "bmp","png");  //defino antes las extensiones que seran validas
 					if(!in_array($Extension, $arrayDeExtValida))
 					{
-						echo "5";
+				//		echo "5";
 					   //"Error archivo de extension invalida";
 					}
 					else
@@ -62,15 +62,15 @@
 						//$destino =  "fotos/".$_FILES["foto"]["name"];
 						$destino = "img/". $_POST['txtEmail'].".".$Extension;
 						$foto=$_POST['txtEmail'].".".$Extension;
-						echo "6";
+				//		echo "6";
 						//MUEVO EL ARCHIVO DEL TEMPORAL AL DESTINO FINAL
     					if (move_uploaded_file($_FILES["txtFoto"]["tmp_name"],$destino))
     					{		
-      						 echo "ok";
+      			//			 echo "ok";
       					}
       					else
       					{   
-      						echo "7";
+      			//			echo "7";
       						// algun error;
       					}
 					}

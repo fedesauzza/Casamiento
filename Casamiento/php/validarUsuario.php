@@ -16,6 +16,10 @@
 		$_SESSION['usuario']= $usuario->email;
 		$_SESSION['clave']= $usuario->clave;
 		$_SESSION['sexo']= $usuario->sexo;
+		$_SESSION['tipo']= $usuario->tipo;
+		$_SESSION['idUsuario']= $usuario->idUsuario;
+		$_SESSION['idCasamiento']= $usuario->idCasamiento;
+		echo var_dump($_SESSION['idUsuario']);
 		echo ("Logeado");
 		//echo var_dump($_SESSION);
 	} else {

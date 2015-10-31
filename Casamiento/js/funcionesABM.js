@@ -31,8 +31,16 @@ function GuardarUsuario()
 	    processData: false
 	});
 	funcionAjax.done(function(retorno){
-		alert(retorno);
-		Mostrar("CrearCasamiento");	
+		//alert(retorno);
+		if(retorno=="Ya existe")
+		{
+			alert(retorno);	
+		}
+		else
+		{
+			MostrarLogin();	
+		}
+		
 		
 	});
 	funcionAjax.fail(function(retorno){
@@ -95,4 +103,23 @@ function EditarUsuario(idParametro)
 	});
 }
 
-
+function CrearCasamiento()
+{
+	//alert("hola");
+	var funcionAjax=$.ajax({
+	url:"nexo.php",
+	type:"post",
+	data:{queHacer:"CrearCasamiento"}
+	});
+	funcionAjax.done(function(retorno){
+		//alert(retorno);
+		alert("lala");
+		MostrarMenu();
+		Mostrar("MostrarCasamiento");
+		//MostrarAdmin("adminTablaUsuarios");		
+	});
+	funcionAjax.fail(function(retorno){	
+		alert(retorno);
+		alert("chau");	
+	});	
+}

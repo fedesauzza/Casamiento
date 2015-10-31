@@ -38,7 +38,7 @@ function validarLogin()
 		if(retorno!="No-logeado"){	
 			//alert("Log");
 			MostrarMenu();
-			Mostrar("CrearCasamiento");
+			Mostrar("MostrarCasamiento");
 			}else
 			{
 				alert("Usuario no registrado");
@@ -75,6 +75,7 @@ function MostrarMenu()
 		data:{queHacer:"MostrarMenu"}
 	});
 	funcionAjax.done(function(retorno){
+		alert(retorno);
 		$("#barraMenu").html(retorno);
 	});
 	funcionAjax.fail(function(retorno){

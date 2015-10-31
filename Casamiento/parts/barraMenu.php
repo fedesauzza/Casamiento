@@ -11,14 +11,19 @@
                 <li><a href="#" onclick="Mostrar('Home')">Home</a>
                 </li>
                 <li role="presentation" id="casamiento"
-				<?php if(!isset($_SESSION['usuario']))
-						{echo "style='display: none'";}
+				<?php session_start(); 
+                    if(!isset($_SESSION['usuario']))
+					{
+                        echo "style='display: none'";
+                    }
 					else
-						{echo "style='display: block'";}
-				?>><a href="#" onclick="Mostrar('CrearCasamiento')">Planear Casamiento</a>
+					{
+                        echo "style='display: block'";
+                    }
+				?>><a href="#" onclick="Mostrar('MostrarCasamiento')">Planear Casamiento</a>
                 </li>
                 <li role="presentation" id="loguear"
-				<?php session_start();
+				<?php 
 					if(isset($_SESSION['usuario']))
 						{echo "style='display: none'";}
 					else
@@ -36,7 +41,7 @@
                 <li><a href="#" onclick="Mostrar('Contacto')">Contacto</a>
                 </li>
                 <li role="presentation" id="desloguear"
-				<?php if(isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'a@a.com' )
+				<?php if(isset($_SESSION['usuario']))
 						{echo "style='display: block'";}
 					else
 						{echo "style='display: none'";}

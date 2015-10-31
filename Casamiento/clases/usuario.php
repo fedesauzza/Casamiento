@@ -13,6 +13,12 @@ class Usuario
   	public $foto;
   	public $idCasamiento;
 
+public function AgregarCasamiento($idCasamiento)
+{
+	$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+	$consulta =$objetoAccesoDato->RetornarConsulta("UPDATE usuario SET idCasamiento= '$idCasamiento' WHERE idUsuario='$this->idUsuario'");
+	$consulta->execute();
+}
  public static function ValidarUsuario($email, $clave) 
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
@@ -30,7 +36,13 @@ public function GuardarUsuario()
 	 		{
 	 			$this->ModificarUsuario();
 	 		}else {
-	 			$this->InsertarUsuario();
+	 			
+	 			if($this->TraerUnUsuarioPorEmail())
+	 			{echo"Ya existe";}
+	 			else
+	 				{
+						$this->InsertarUsuario();
+	 					}
 	 		}
 	 }
 
@@ -96,6 +108,14 @@ public function GuardarUsuario()
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
 		$consulta = $objetoAccesoDato->RetornarConsulta("SELECT * FROM usuario WHERE idUsuario = :idUsuario");
 		$consulta->bindValue(':idUsuario',$idUsuario, PDO::PARAM_INT);
+		$consulta->execute();
+		$usuarioBuscado = $consulta->fetchObject('Usuario');
+		return $usuarioBuscado;
+	}
+	public function TraerUnUsuarioPorEmail()
+	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+		$consulta = $objetoAccesoDato->RetornarConsulta("SELECT * FROM usuario WHERE email = '$this->email'");
 		$consulta->execute();
 		$usuarioBuscado = $consulta->fetchObject('Usuario');
 		return $usuarioBuscado;

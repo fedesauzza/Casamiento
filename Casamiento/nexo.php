@@ -1,17 +1,26 @@
 <?php
 require_once("clases/AccesoDatos.php");
 require_once("clases/usuario.php");
+require_once("clases/Casamiento.php");
 
 $queHago=$_POST['queHacer'];
 
 switch ($queHago) {
+	case 'CrearCasamiento':
+		session_Start();
+		$casamiento = new Casamiento();
+		$casamiento->idUsuario = $_SESSION['idUsuario'];
+		$resultado = $casamiento->CrearCasamiento();
+		$usuario = Usuario::TraerUnUsuarioPorId($_SESSION['idUsuario']);		
+		$usuario->AgregarCasamiento($resultado);
+	break;
 	case 'Home':
 		include("parts/home.php");
 		break;
 	case 'Contacto':
 			include("parts/contact.php");
 		break;
-	case 'CrearCasamiento':
+	case 'MostrarCasamiento':
 			include("parts/crearCasamiento.php");
 		break;
 		case 'adminPanel':
