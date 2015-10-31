@@ -4,21 +4,6 @@ function GuardarUsuario()
 	var formData = new FormData(document.getElementById("FormRegistro"));
     formData.append("queHacer", "GuardarUsuario");
     formData.append("imgPerfil", $('#imgPerfil').attr("src"));
-	/*var idUsuario=$("#idUsuario").val();
-	var nombre=$("#txtNombre").val();
-	var apellido=$("#txtApellido").val();
-	var email=$("#txtEmail").val();
-	var clave=$("#txtClave").val();
-	var domicilio=$("#txtDomicilio").val();
-	var telefono=$("#txtTelefono").val();
-	var sexo;*/
-	//alert(idUsuario+nombre+apellido+email+clave+domicilio+telefono);
-	/*if (document.getElementById('sexoM').checked == true) {
-			sexo = 'M';
-		}
-		else{
-			sexo = 'F';
-		}*/
 	formData.append("tipo", "us");
 	//formData.append("rbSexo", sexo);
 		var funcionAjax=$.ajax({
@@ -34,7 +19,9 @@ function GuardarUsuario()
 		//alert(retorno);
 		if(retorno=="Ya existe")
 		{
-			alert(retorno);	
+			alert(retorno);
+			Mostrar('MostrarRegistro');
+
 		}
 		else
 		{
