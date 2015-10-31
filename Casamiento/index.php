@@ -37,10 +37,19 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
   </head>
   <body>
-	<header>
-		<nav div class="navbar navbar-default navbar-static-top" role="navigation">
+  	<div id="custom-bootstrap-menu" class="navbar navbar-default navbar-static-top" role="navigation">
+    		<div class="navigation">
+    			<div class="container" id="barraMenu">
+					<?php
+					 include("parts/barraMenu.php"); ?>
+				</div>
+		    </div>
+	</div>
+	
+		<!--<nav div class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="container">
 				<ul class="social-network">
 					<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
@@ -54,7 +63,7 @@
 					<li><a href="#"><i class="fa fa-envelope"></i>contacto@casamientos-sauzza.com</a></li>
 				</ul>
 			</div>
-		</nav>
+		</nav>-->
 		
 		<!--<nav class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="navigation">
@@ -85,8 +94,9 @@
 				</div>
 			</div>	
 		</nav>-->
-		<div id="custom-bootstrap-menu" class="navbar navbar-default navbar-static-top" role="navigation">
-		    <!--<div class="container-fluid">-->
+
+		<!--<div id="custom-bootstrap-menu" class="navbar navbar-default navbar-static-top" role="navigation">
+		    <div class="container-fluid">
 		    <div class="navigation">
 		    <div class="container">
 		        <div class="navbar-header"><a class="navbar-brand" href="#"></a>
@@ -94,6 +104,9 @@
 		            </button>
 		        </div>
 		        <div class="collapse navbar-collapse navbar-menubuilder">
+		        	<ul class="nav navbar-nav navbar-left">
+		        		<li><a>Casamientos Sauzza</a></li>
+		        	</ul>
 		            <ul class="nav navbar-nav navbar-right">
 		                <li><a onclick="Mostrar('Home')">Home</a>
 		                </li>
@@ -101,23 +114,25 @@
 		                </li>
 		                <li><a onclick="MostrarLogin()">Conectarse</a>
 		                </li>
-		                <li><a href="Desconectarse">Desconectarse</a>
+		                <li><a onclick="Desconectarse()">Desconectarse</a>
 		                </li>
 		                <li><a onclick="Mostrar('Contacto')">Contacto</a>
 		                </li>
 		                <li><a onclick="Mostrar('adminPanel')">Admin</a>
 		                </li>
+		                <li><a onclick="Mostrar('userPanel')">Perfil</a>
+		                </li>
 		            </ul>
 		        </div>
 		        </div>
 		    </div>
-		</div>		
-	</header>
+		</div>-->
+
    
 	<div class="container">
 		<div class="row" id="principal">
-			<?php include("parts/home.php"); ?>				
-			
+			<?php 
+			include("parts/home.php"); ?>
 			<!--<div class="col-md-4">
 				<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s">
 					<div class="align-center">
@@ -284,7 +299,7 @@
                 $('#dataTables-example').dataTable();
             });
     </script>
-    <script src="js/custom.js"></script>
+    <script src="js/morris/custom.js"></script>
 
 	<script>
 	wow = new WOW(

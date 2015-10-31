@@ -1,7 +1,3 @@
-<?php     
-  require_once("clases\usuario.php"); 
-session_start();
- ?>
 <form class="form-horizontal" onsubmit="GuardarUsuario();return false;" id="FormRegistro" method="post" enctype="multipart/form-data" >
   <fieldset>
 
@@ -74,6 +70,16 @@ session_start();
           <input type="radio" name="rbSexo" id="sexoM" value="M">
           Masculino
         </label>
+      </div>
+    </div>
+    <!-- File Button --> 
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="filebutton">Imagen:</label>
+      <div class="col-md-4">
+        <input id="txtFoto" name="txtFoto" class="input-file" type="file">
+        <br>
+              <img id="imgPerfil" name="imgPerfil" src="img/find_user.png" class="col-md-6 col-md-offset-2 fotoform"/>
+              <p style="  color: black;" class="col-md-9 col-md-offset-2">*La foto se actualiza al guardar.</p>
       </div>
     </div>
     <input type="text" hidden id="idUsuario" name="idUsuario">

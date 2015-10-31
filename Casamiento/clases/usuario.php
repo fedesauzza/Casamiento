@@ -9,6 +9,8 @@ class Usuario
   	public $domicilio;
   	public $telefono;
   	public $sexo;
+  	public $tipo;
+  	public $foto;
   	public $idCasamiento;
 
  public static function ValidarUsuario($email, $clave) 
@@ -42,7 +44,9 @@ public function GuardarUsuario()
 					,clave
 					,domicilio
 					,telefono
-					,sexo) 
+					,sexo
+					,tipo
+					,foto) 
 				VALUES
 				('$this->nombre'
 				,'$this->apellido'
@@ -50,7 +54,9 @@ public function GuardarUsuario()
 				,'$this->clave'
 				,'$this->domicilio'
 				,'$this->telefono'
-				,'$this->sexo')");
+				,'$this->sexo'
+				,'$this->tipo'
+				,'$this->foto')");
 				//$consulta =$objetoAccesoDato->RetornarConsulta("CALL Insertarusuario('$this->nombre','$this->clave','$this->correo','$this->sexo')");
 				$consulta->execute();
 				return $objetoAccesoDato->RetornarUltimoIdInsertado();
@@ -78,12 +84,13 @@ public function GuardarUsuario()
 	 public static function TraerUnUsuario($correo, $clave) 
 	{
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-			$consulta =$objetoAccesoDato->RetornarConsulta("select * from usuarios where correo = $correo AND clave=$clave");
+			$consulta =$objetoAccesoDato->RetornarConsulta("select * from usuario where correo = $correo AND clave=$clave");
 			//$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerUnusuario($id)");
 			$consulta->execute();
 			$usuarioBuscado= $consulta->fetchObject('usuario');
 			return $usuarioBuscado;				
 	}
+
 	public static function TraerUnUsuarioPorId($idUsuario)
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
@@ -105,7 +112,9 @@ public function GuardarUsuario()
 					email=:email,
 					domicilio=:domicilio,
 					telefono=:telefono,
-					sexo=:sexo
+					sexo=:sexo,
+					tipo=:tipo,
+					foto=:foto
 				WHERE idUsuario=:idUsuario");
 			$consulta->bindValue(':idUsuario',$this->idUsuario, PDO::PARAM_INT);
 			$consulta->bindValue(':nombre',$this->nombre, PDO::PARAM_STR);
@@ -114,6 +123,8 @@ public function GuardarUsuario()
 			$consulta->bindValue(':domicilio',$this->domicilio, PDO::PARAM_STR);
 			$consulta->bindValue(':telefono',$this->telefono, PDO::PARAM_STR);
 			$consulta->bindValue(':sexo',$this->sexo, PDO::PARAM_STR);
+			$consulta->bindValue(':tipo',$this->tipo, PDO::PARAM_STR);
+			$consulta->bindValue(':foto',$this->foto, PDO::PARAM_STR);
 			//$consulta =$objetoAccesoDato->RetornarConsulta("CALL Modificarusuario('$this->id','$this->clave','$this->correo','$this->sexo')");
 			return $consulta->execute();
 

@@ -33,6 +33,8 @@
                                             <th>Domicilio</th>
                                             <th>Telefono</th>
                                             <th>Sexo</th>
+                                            <th>Tipo</th>
+                                            <th>Foto</th>
                                             <th>Modificar</th>
                                             <th>Eliminar</th>
                                         </tr>
@@ -49,6 +51,8 @@
                                             <td>$usuario->domicilio</td>
                                             <td>$usuario->telefono</td>
                                             <td>$usuario->sexo</td>
+                                            <td>$usuario->tipo</td>
+                                            <td><img  class='fotoGrilla' src='img/".$usuario->foto."' /></td>
                                             <td><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalEliminar'><i class='fa fa-pencil'></i> Eliminar</button></td>
                                             <td><button class='btn btn-primary' onclick='EditarUsuario($usuario->idUsuario)'><i class='fa fa-edit '></i> Editar</button></td>
                                             <!--<td><button class='btn btn-danger' onclick='BorrarUsuario($usuario->idUsuario)'><i class='fa fa-pencil'></i> Borrar</button></td>-->
@@ -70,7 +74,7 @@
                                         </div>
                                         <div class='modal-footer'>
                                         <button class='btn btn-danger' onclick='BorrarUsuario($usuario->idUsuario)' data-dismiss='modal'><i class='fa fa-pencil'></i> Borrar</button>
-                                            <button type='button' class='btn btn-info' data-dismiss='modal'>Cancelar</button>
+                                        <button type='button' class='btn btn-info' data-dismiss='modal'>Cancelar</button>
                                             
                                         </div>
                                     </div>

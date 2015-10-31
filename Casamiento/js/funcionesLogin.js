@@ -34,8 +34,10 @@ function validarLogin()
 
 	funcionAjax.done(function(retorno){
 		//alert(retorno);
+		
 		if(retorno!="No-logeado"){	
 			//alert("Log");
+			MostrarMenu();
 			Mostrar("CrearCasamiento");
 			}else
 			{
@@ -45,5 +47,37 @@ function validarLogin()
 	});
 	funcionAjax.fail(function(retorno){
 		alert(retorno);	
+	});
+}
+
+function Desconectarse()
+{
+	var funcionAjax=$.ajax({
+		url:"php/desloguearUsuario.php",
+		type:"post"
+	});
+	funcionAjax.done(function(retorno){
+		//alert(retorno);
+		$("#principal").html(retorno);
+		MostrarMenu();
+		MostrarLogin();
+	});
+	funcionAjax.fail(function(retorno){
+		alert(retorno);	
+	});
+}
+function MostrarMenu()
+{
+	//alert("MostarMenu");
+	var funcionAjax=$.ajax({
+		url:"nexo.php",
+		type:"post",
+		data:{queHacer:"MostrarMenu"}
+	});
+	funcionAjax.done(function(retorno){
+		$("#barraMenu").html(retorno);
+	});
+	funcionAjax.fail(function(retorno){
+		alert(retorno);
 	});
 }

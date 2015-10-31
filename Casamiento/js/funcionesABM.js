@@ -1,48 +1,38 @@
 function GuardarUsuario()
 {
 	alert("hola");
-	var idUsuario=$("#idUsuario").val();
+	var formData = new FormData(document.getElementById("FormRegistro"));
+    formData.append("queHacer", "GuardarUsuario");
+    formData.append("imgPerfil", $('#imgPerfil').attr("src"));
+	/*var idUsuario=$("#idUsuario").val();
 	var nombre=$("#txtNombre").val();
 	var apellido=$("#txtApellido").val();
 	var email=$("#txtEmail").val();
 	var clave=$("#txtClave").val();
 	var domicilio=$("#txtDomicilio").val();
 	var telefono=$("#txtTelefono").val();
-	var sexo;
-	alert(idUsuario+nombre+apellido+email+clave+domicilio+telefono);
-	if (document.getElementById('sexoM').checked == true) {
+	var sexo;*/
+	//alert(idUsuario+nombre+apellido+email+clave+domicilio+telefono);
+	/*if (document.getElementById('sexoM').checked == true) {
 			sexo = 'M';
 		}
 		else{
 			sexo = 'F';
-		}
-
+		}*/
+	formData.append("tipo", "us");
+	//formData.append("rbSexo", sexo);
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
-		data:{
-			queHacer:"GuardarUsuario",
-			idUsuario:idUsuario,
-			txtNombre:nombre,
-			txtApellido:apellido,
-			txtEmail:email,
-			txtClave:clave,
-			txtDomicilio:domicilio,
-			txtTelefono:telefono,
-			rbSexo:sexo	
-		}
+		dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+	    processData: false
 	});
 	funcionAjax.done(function(retorno){
 		alert(retorno);
-		if(retorno)
-		{
-			MostrarAdmin("adminTablaUsuarios");
-		}
-		else
-		{
-			Mostrar("CrearCasamiento");
-		}
-				
+		Mostrar("CrearCasamiento");	
 		
 	});
 	funcionAjax.fail(function(retorno){
@@ -52,7 +42,7 @@ function GuardarUsuario()
 }
 function BorrarUsuario(idParametro)
 {
-	alert(idParametro);
+	//alert(idParametro);
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -62,7 +52,7 @@ function BorrarUsuario(idParametro)
 		}
 	});
 	funcionAjax.done(function(retorno){
-		alert(retorno);
+		//alert(retorno);
 		MostrarAdmin("adminTablaUsuarios");		
 	});
 	funcionAjax.fail(function(retorno){	
@@ -70,7 +60,7 @@ function BorrarUsuario(idParametro)
 	});	
 }
 function EditarUsuario(idParametro)
-{	alert("Hola");
+{	//alert("Hola");
 	alert(idParametro);
 	MostrarAdmin('MostrarRegistro');
 	var funcionAjax=$.ajax({
@@ -98,52 +88,11 @@ function EditarUsuario(idParametro)
 		else{
 			document.getElementById('sexoF').checked = true;
 		}
+		$('#imgPerfil').attr("src","img/"+usuario.foto);
 	});
 	funcionAjax.fail(function(retorno){	
 		alert(retorno);
 	});
 }
-function GuardarUsuarioAdmin()
-{
-	alert("hola");
-	var idUsuario=$("#idUsuario").val();
-	var nombre=$("#txtNombre").val();
-	var apellido=$("#txtApellido").val();
-	var email=$("#txtEmail").val();
-	var clave=$("#txtClave").val();
-	var domicilio=$("#txtDomicilio").val();
-	var telefono=$("#txtTelefono").val();
-	var sexo;
-	alert(idUsuario+nombre+apellido+email+clave+domicilio+telefono);
-	if (document.getElementById('sexoM').checked == true) {
-			sexo = 'M';
-		}
-		else{
-			sexo = 'F';
-		}
 
-		var funcionAjax=$.ajax({
-		url:"nexo.php",
-		type:"post",
-		data:{
-			queHacer:"GuardarUsuario",
-			idUsuario:idUsuario,
-			txtNombre:nombre,
-			txtApellido:apellido,
-			txtEmail:email,
-			txtClave:clave,
-			txtDomicilio:domicilio,
-			txtTelefono:telefono,
-			rbSexo:sexo	
-		}
-	});
-	funcionAjax.done(function(retorno){
-		alert(retorno);
-		MostrarAdmin("adminTablaUsuarios");	
-		
-	});
-	funcionAjax.fail(function(retorno){
-	alert(retorno);	
-		$("#principal").html(retorno.responseText);	
-	});
-}
+

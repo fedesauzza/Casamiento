@@ -17,11 +17,20 @@ switch ($queHago) {
 		case 'adminPanel':
 			include("parts/adminPanel.php");
 		break;
+		case 'userPanel':
+			include("parts/usuarioPanel.php");
+		break;
 		case 'adminHome':
 			include("parts/adminHome.php");
 		break;
+		case 'usuarioHome':
+			include("parts/usuarioHome.php");
+		break;
 		case 'adminTablaUsuarios':
 			include("parts/adminTablaUsuarios.php");
+		break;
+		case 'MostrarMenu':
+			include("parts/barraMenu.php");
 		break;	/*	
 	case 'MostarBotones':
 			include("partes/botonesABM.php");
@@ -46,18 +55,7 @@ switch ($queHago) {
 
 		break;/**/
 	case 'GuardarUsuario':
-			//session_start();
-			$usuario = new Usuario();
-			$usuario->idUsuario=$_POST['idUsuario'];
-			$usuario->nombre=$_POST['txtNombre'];
-			$usuario->apellido=$_POST['txtApellido'];
-			$usuario->email=$_POST['txtEmail'];
-			$usuario->clave=$_POST['txtClave'];
-			$usuario->domicilio=$_POST['txtDomicilio'];
-			$usuario->telefono=$_POST['txtTelefono'];
-			$usuario->sexo=$_POST['rbSexo'];
-			$cantidad=$usuario->GuardarUsuario();
-			echo $usuario->idUsuario;
+			include("parts/guardarUsuario.php");
 		break;
 	case 'TraerUsuario':
 			$usuario = Usuario::TraerUnUsuarioPorId($_POST['idUsuario']);		

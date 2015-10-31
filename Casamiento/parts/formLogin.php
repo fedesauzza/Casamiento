@@ -1,17 +1,7 @@
-<?php session_start();
-if(!isset($_SESSION['email'])){ ?>
-  <!--<div id="formLogin" class="col-md-5 col-md-offset-3">
-        <form  class="form-ingreso " onsubmit="validarLogin();return false;">
-            <h2 class="form-ingreso-heading">Ingrese sus datos</h2>
-            <label for="email" class="sr-only">Email</label>
-                  <input type="email" id="email" class="form-control" placeholder="Email" required="" autofocus="" value="<?php  if(isset($_COOKIE["registro"])){echo $_COOKIE["registro"];}?>">
-            <label for="clave" class="sr-only">Clave</label>
-            <input type="password" id="clave" minlength="4" class="form-control" placeholder="clave" required=""><br>
-            <a href="#" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-ok"></span> Conectarse</a><a href="#" class="btn btn-primary btn-success"><span class="glyphicon glyphicon-floppy-disk"></span> Registrarse</a>
-            <br><br><br>
-
-        </form>
-  </div>-->
+<?php 
+session_start();
+if(!isset($_SESSION['usuario'])){ 
+?>
 <form class="form-horizontal" onsubmit="validarLogin();return false;">
 <fieldset>
 
@@ -61,6 +51,4 @@ if(!isset($_SESSION['email'])){ ?>
 
 </fieldset>
 </form>
-
-  
-<?php } ?>
+<?php  }  ?>
