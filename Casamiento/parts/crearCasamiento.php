@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+ require_once("clases/AccesoDatos.php");
+ require_once("clases/Casamiento.php");
+ require_once("clases/Mesa.php");
+ require_once("clases/usuario.php");
+?>
 <div class="container">
 <fieldset>
 <!-- Form Name -->
@@ -11,7 +16,7 @@
 			$usuario = Usuario::TraerUnUsuarioPorId($_SESSION['idUsuario']);
 			if($usuario->idCasamiento)
 			{
-				//include("parts/organizarMesas.php");
+				include("parts/organizarMesas.php");
 			}
 			else
 			{

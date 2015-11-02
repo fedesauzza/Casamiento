@@ -2,6 +2,7 @@
 require_once("clases/AccesoDatos.php");
 require_once("clases/usuario.php");
 require_once("clases/Casamiento.php");
+require_once("clases/Mesa.php");
 
 $queHago=$_POST['queHacer'];
 
@@ -14,6 +15,17 @@ switch ($queHago) {
 		$usuario = Usuario::TraerUnUsuarioPorId($_SESSION['idUsuario']);		
 		$usuario->AgregarCasamiento($resultado);
 	break;
+	case 'CrearMesa':
+		session_start();
+		$mesa = new Mesa();
+		$mesa->idCasamiento = $_SESSION['idCasamiento'];
+		$mesa->nombreMesa = $_POST['nombreMesa'];
+		$resultado = $mesa->CrearMesa();
+		echo $resultado;
+	break;
+	case 'grillaMesas':
+		include("parts/grillaMesas.php");
+		break;
 	case 'Home':
 		include("parts/home.php");
 		break;

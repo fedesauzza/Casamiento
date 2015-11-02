@@ -110,3 +110,25 @@ function CrearCasamiento()
 		alert("chau");	
 	});	
 }
+function CrearMesa()
+{
+	alert("hola");
+	var nombreMesa=$("#txtNombreMesa").val();
+	var funcionAjax=$.ajax({
+	url:"nexo.php",
+	type:"post",
+	data:{
+		queHacer:"CrearMesa",
+		nombreMesa:nombreMesa	
+	}
+	});
+	funcionAjax.done(function(retorno){
+		alert(retorno);
+		alert("lala");
+		MostrarEnCasamiento("grillaMesas");
+		
+	});
+	funcionAjax.fail(function(retorno){	
+		alert(retorno);	
+	});	
+}
